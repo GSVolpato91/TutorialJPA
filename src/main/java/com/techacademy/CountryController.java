@@ -37,7 +37,7 @@ public class CountryController {
         model.addAttribute("country", country);
         // country/detail.htmlに画面遷移
         return "country/detail";
-    }
+     }
 
     // ----- 更新（追加） -----
     @PostMapping("/detail")
@@ -51,10 +51,10 @@ public class CountryController {
     }
 
     // ----- 削除画面 -----
-    @GetMapping("/delete")
-    public String deleteCountryForm(Model model) {
+    @GetMapping("/delete/{code}/")
+    public String deleteCountryForm(@PathVariable String code, Model model) {
         // country/delete.htmlに画面遷移
-        return "country/delete";
+       return "/country/delete";
     }
 
     // ----- 削除 -----
